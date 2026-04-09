@@ -18,7 +18,8 @@ Examples:
 
 $> ./first_word "FOR PONY" | cat -e
 FOR$
-$> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+$> ./first_word "this        ...       is sparta, then again,
+	maybe    not" | cat -e
 this$
 $> ./first_word "   " | cat -e
 $
@@ -36,17 +37,30 @@ int main(int argc, char **argv)
 {
 	int i = 0;
 	char *str;
-	if (argc !=2)
+
+	// Ensure the program receives exactly one argument
+	if (argc != 2)
 	{
 		write(1, "\n", 1);
 		return (0);
 	}
+
 	str = argv[1];
+
+	// Skip all leading spaces and tabs to find the start of the first word
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	while (str[i] != '\0' && str[i] !=  ' ' && str[i] != '\t')
+
+	// Print characters of the first word:
+	// stop when we reach a space, tab, or end of string
+	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t')
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
+
+	// Always end output with a newline
+	write(1, "\n", 1);
+
+	return (0);
 }
