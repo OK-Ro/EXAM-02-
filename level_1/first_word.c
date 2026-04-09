@@ -29,6 +29,7 @@ lorem,ipsum$
 $>
 
 */
+
 #include <unistd.h>
 
 int main(int argc, char **argv)
@@ -40,11 +41,14 @@ int main(int argc, char **argv)
 		write(1, "\n", 1);
 		return (0);
 	}
-	while (argv[1][i] == ' ' || argv[1][i] == '\t')
+
+	char *str = argv[1];
+	char *str2 = argv[2];
+	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	while (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
+	while (str[i] = '\0' && str[i] != ' ' && str[i] != '\t')
 	{
-		write(1, &argv[1][i], 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 	write(1, "\n", 1);
