@@ -80,7 +80,7 @@ int main(void)
 			write(1, "fizz", 4);
 		else
 			ft_putnbr(n);
-
+			
 		write(1, "\n", 1);
 		n++;
 	}
