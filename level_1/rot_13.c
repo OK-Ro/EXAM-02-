@@ -30,3 +30,27 @@ $
 $>
 
 */
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int i;
+	char *str;
+
+	if (argc != 2)
+		return (write(1, "\n", 1), 0);
+	i = 0;
+	str = argv[1];
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str = ((str[i] - 'a' + 13) % 26) + 'a';
+		write(1, &str[i], 1);
+		i++;
+	}
+	
+	write(1, "\n", 1);
+	str = argv[1];
+	return 0;
+}
