@@ -2,10 +2,9 @@
 
 size_t	ft_strcspn(const char *s, const char *reject)
 {
-	int i;
+	int i = 0;
 	int j;
 
-	i = 0;
 	while (s[i])
 	{
 		j = 0;
@@ -15,7 +14,6 @@ size_t	ft_strcspn(const char *s, const char *reject)
 				return i;
 			j++;
 		}
-		
 		i++;
 	}
 	return i;
