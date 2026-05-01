@@ -13,6 +13,7 @@ int	ft_atoi_base(const char *str, int str_base)
 {
 	int results = 0;
 	int i = 0;
+
 	int sign = 1;
 	int values;
 

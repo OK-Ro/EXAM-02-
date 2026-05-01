@@ -42,6 +42,7 @@ int ft_atoi(char *str)
 	return (results);
 }
 
+
 int main(int argc, char **argv)
 {
 	int i = 2;
